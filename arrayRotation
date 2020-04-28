@@ -1,0 +1,57 @@
+// find the arr after n rotations to left
+
+// creating new array
+function rotLeft(a, d) {
+    let len = 0,j=0
+    var b =[]
+    len = a.length
+    for (let i = d; i < len; i++){
+        b[j] = a[i]
+        j++
+    }
+    for (let i = 0; i < d; i++){
+        b[j] = a[i]
+        j++
+    }
+    return b;
+}
+
+// find the arr after n rotations to left
+// using the existing array
+function rotLeft(arr, k) {
+  
+  console.log(arr);
+  if(k < arr.length){
+    let removedItems = arr.splice(0,k);
+    console.log("----" + removedItems);
+    arr.push(...removedItems);
+    console.log("----" + arr);
+  }
+  else{
+    while(i<k){
+       arr.push(...arr.splice(0,1));
+      i++;
+    }
+  }
+  return arr;
+}
+
+
+// find the arr after n rotations to right
+// using the existing array
+function rotLeft(arr, k) {
+  console.log(arr);
+  if(k < arr.length){
+    let removedItems = arr.splice(-k);
+    console.log("----" + removedItems);
+    arr.unshift(...removedItems);
+    console.log("----" + arr);
+  }
+  else{
+    while(i<k){
+       arr.unshift(...arr.splice(0,1));
+      i++;
+    }
+  }
+  return arr;
+}
